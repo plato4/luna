@@ -18,10 +18,20 @@ export class GameManager extends Component {
 	public onDestroy(): void {}
 
 	public boxScene() {
-		const box = BABYLON.SceneLoader.Append(
+		/*BABYLON.SceneLoader.Append(
 			"./",
 			"model.gltf",
 			this.node.getScene()
+		);*/
+
+		BABYLON.SceneLoader.ImportMesh(
+			"",
+			"./",
+			"model.gltf",
+			this.node.getScene(),
+			(m) => {
+				new Rotate("Rotate", m[0]);
+			}
 		);
 
 		const camera = this.node.getScene().getCameraByName("default_camera");
@@ -32,6 +42,5 @@ export class GameManager extends Component {
 			new BABYLON.Vector3(1, 1, 0),
 			this.game.scene
 		);
-		//new Rotate("Rotate", box);
 	}
 }
