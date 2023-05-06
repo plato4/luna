@@ -1,0 +1,8 @@
+.instruction{
+    height: calc(10 * var(--resolution));
+
+    margin-bottom: calc(5 * var(--resolution));
+
+    display: flex;
+    align-items: center;
+}

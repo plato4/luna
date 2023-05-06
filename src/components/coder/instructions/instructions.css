@@ -1,0 +1,4 @@
+.instructions {
+	background-color: var(--c3);
+    height: calc(100% - (10 * var(--resolution)));
+}

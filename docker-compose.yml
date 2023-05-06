@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  babylonjs-game:
+    image: node:19-alpine3.16
+    container_name: babylonjs-game
+    ports:
+      - 5173:5173
+    volumes:
+      - ./:/home/node/app
+    working_dir: /home/node/app
+    command: tail -f /dev/null

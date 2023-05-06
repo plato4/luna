@@ -1,0 +1,44 @@
+:root {
+	--background-error: #0b8b8fe1;
+	--foreground-error: #2e222f;
+}
+
+body {
+	margin: 0%;
+	overflow: hidden;
+	user-select: none;
+}
+
+.window-too-small{
+	position: absolute;
+
+	top: 0%;
+	left: 0%;
+	width: 100vw;
+	height: 100vh;
+	z-index: 100;
+
+	display: flex;
+
+	text-align: center;
+
+    justify-content: center;
+    align-items: center;
+
+	color: var(--foreground-error);
+	background-color: var(--background-error);
+}
+
+.game-layer-container {
+	width: 100vw;
+	height: 100vh;
+}
+
+.ui-layer-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+}
