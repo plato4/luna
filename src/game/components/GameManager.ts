@@ -3,6 +3,7 @@ import Component from "../Component";
 import { Game } from "../Game";
 import { Rotate } from "./Rotate";
 import * as BABYLON from "babylonjs";
+import "babylonjs-loaders";
 
 export class GameManager extends Component {
 	public game: Game;
@@ -17,9 +18,9 @@ export class GameManager extends Component {
 	public onDestroy(): void {}
 
 	public boxScene() {
-		const box = BABYLON.MeshBuilder.CreateBox(
-			"default_box",
-			{ width: 0.1, height: 0.1, depth: 0.1 },
+		const box = BABYLON.SceneLoader.Append(
+			"./",
+			"model.gltf",
 			this.node.getScene()
 		);
 
@@ -31,6 +32,6 @@ export class GameManager extends Component {
 			new BABYLON.Vector3(1, 1, 0),
 			this.game.scene
 		);
-		new Rotate("Rotate", box);
+		//new Rotate("Rotate", box);
 	}
 }
