@@ -1,1 +1,1 @@
-A BabylonJS and ReactJS boilerplate fo 3d game development.
+A BabylonJS + React + Typescript programming puzzle game
