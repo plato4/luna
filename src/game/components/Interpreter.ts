@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
+import * as BABYLON from "babylonjs";
+
 import Component from "../Component";
 import { Level } from "./Level";
 
@@ -35,8 +37,8 @@ export class Interpreter extends Component {
 		this._level = value;
 	}
 
-	constructor(level: Level, gameObject: Phaser.GameObjects.GameObject) {
-		super(gameObject, "Intepreter");
+	constructor(level: Level, node: BABYLON.Node) {
+		super("Intepreter", node);
 		this._level = level;
 	}
 
