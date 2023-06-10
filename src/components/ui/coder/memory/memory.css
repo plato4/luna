@@ -1,0 +1,4 @@
+.memory {
+    width: calc(100 * var(--resolution));
+    margin: calc(5 * var(--resolution));
+}

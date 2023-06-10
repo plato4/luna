@@ -1,7 +1,0 @@
-.coder {
-	max-height: calc(100% - (5 * var(--resolution))); 
-	width: fit-content;
-	margin: calc(5 * var(--resolution));
-
-	display: flex;
-}
