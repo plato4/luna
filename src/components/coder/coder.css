@@ -5,13 +5,3 @@
 
 	display: flex;
 }
-
-.instructions-container {
-	height: calc(100% - (7.5 * var(--resolution)));
-	width: calc(100 * var(--resolution));
-	z-index: 1;
-}
-
-.operations-container {
-	width: calc(50 * var(--resolution));
-}
