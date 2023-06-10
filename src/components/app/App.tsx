@@ -1,5 +1,6 @@
 import "./app.css";
 import "../../css/bit.css";
+import "../../css/palette.css";
 
 import { createContext, useContext, useState } from "react";
 import React from "react";

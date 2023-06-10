@@ -1,4 +1,22 @@
 .instructions {
     width: calc(100 * var(--resolution));
+    height: calc(100% - 20 * var(--resolution));
     margin: calc(5 * var(--resolution));
+
+    background-color: var(--c24);;
+}
+
+.textarea {
+    width: calc(100% - 10 * var(--resolution));
+    height: calc(100% - 10 * var(--resolution));
+
+    resize: none;
+
+    font-family: 'PIXEL';
+    font-size: var(--font-size);
+    text-shadow: calc(1 * var(--resolution)) calc(1 * var(--resolution)) var(--c1);
+    outline: none;
+
+    color: var(--c24);
+    background-color: var(--c26);
 }

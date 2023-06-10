@@ -1,4 +1,8 @@
 .ui {
-	height: fit-content;
-	width: fit-content;
+	height: 100%;
+	width: 100%;
+}
+
+:root {
+	--lighting: var(--c9) !important;
 }

@@ -6,7 +6,7 @@ import Memory from "./memory/Memory";
 
 const Coder = () => {
 	return (
-		<div className="coder">
+		<div className="bit-container coder">
 			<Instructions />
 			<Memory />
 		</div>
