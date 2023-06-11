@@ -1,5 +1,5 @@
 import "./app.css";
-import "../../css/bit.css";
+import "../../css/steampunk.css";
 import "../../css/palette.css";
 
 import { createContext, useContext, useState } from "react";

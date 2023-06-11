@@ -2,7 +2,3 @@
 	height: 100%;
 	width: 100%;
 }
-
-:root {
-	--lighting: var(--c9) !important;
-}

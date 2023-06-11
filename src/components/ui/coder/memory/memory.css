@@ -1,7 +1,12 @@
 .memory {
-    width: calc(200 * var(--resolution));
-    height: calc(100% - 20 * var(--resolution));
-    margin: calc(5 * var(--resolution));
+    width: 500px;
+    height: 93%;
+    margin: 1%;
+}
 
-    background-color: var(--c24);
+.memory-inner {
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--c21);
 }

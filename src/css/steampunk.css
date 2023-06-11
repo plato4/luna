@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'PIXEL';
+    src: url('PIXEL.ttf');
+}
+
+body {
+    font-family: 'PIXEL', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 32;
+}
+
+.container {
+    border: 26px solid transparent;
+	border-image: url('panel1.png') 26 round;
+}

@@ -1,9 +1,6 @@
 .coder {
-    height: calc(100% - 20 * var(--resolution));
-    margin: calc(5 * var(--resolution));
-    width: fit-content;
+    height: 100%;
+    width: 100%;
 
     display: flex;
-
-    background-color: var(--c25);
 }
