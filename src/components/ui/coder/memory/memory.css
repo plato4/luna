@@ -1,6 +1,5 @@
 .memory {
     width: 500px;
-    height: 93%;
     margin: 1%;
 }
 
@@ -9,4 +8,6 @@
     height: 100%;
 
     background-color: var(--c21);
+
+    display: flex;
 }

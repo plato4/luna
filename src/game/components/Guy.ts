@@ -5,7 +5,7 @@ import Interpreter from "../interpreter/Interpreter";
 
 export class Guy extends Component {
 	public interpreter: Interpreter = new Interpreter(32);
-	public updateHook?: () => void;
+	public static renderHook?: () => void;
 	constructor(node: BABYLON.Node) {
 		super("guy", node);
 	}
