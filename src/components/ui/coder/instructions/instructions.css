@@ -5,7 +5,7 @@
 
 .textarea {
     width: calc(50 * var(--resolution));
-    height: calc(100% - 9 * var(--resolution));
+    height: calc(100% - 10 * var(--resolution));
 
     padding: calc(3 * var(--resolution));
 
