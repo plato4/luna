@@ -17,10 +17,10 @@ body {
 
 .container {
     border: calc(8 * var(--resolution)) solid transparent;
-	border-image: url('panel2.png') 38 repeat;
+	border-image: url('panel2.png') 38 round;
 }
 
 .container.inner {
     border: calc(2 * var(--resolution)) solid transparent;
-	border-image: url('panelinner.png') 12 repeat;
+	border-image: url('panelinner.png') 12 round;
 }
