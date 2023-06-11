@@ -21,6 +21,6 @@ body {
 }
 
 .container.inner {
-    border: calc(2 * var(--resolution)) solid transparent;
+    border: calc(3 * var(--resolution)) solid transparent;
 	border-image: url('panelinner.png') 12 round;
 }
