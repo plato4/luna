@@ -1,6 +1,6 @@
 .memory {
-    width: 500px;
-    margin: 1%;
+    width: calc(150 * var(--resolution));
+    margin: calc(5 * var(--resolution));
 }
 
 .memory-inner {
@@ -10,4 +10,22 @@
     background-color: var(--c21);
 
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-evenly;
+}
+
+.memory-value {
+    width: calc(15 * var(--resolution));
+    height: calc(10 * var(--resolution));
+
+    background-color: var(--c1);
+    color: var(--c24);
+    
+    font-size: calc(15 * var(--resolution));
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

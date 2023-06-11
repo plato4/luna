@@ -6,13 +6,19 @@ import React, { useContext, useState } from "react";
 
 const Memory = () => {
 	const { game } = useContext(GameContext);
-	const [rerender, setRerender] = useState({});
+	const [memory, setMemory] = useState<Array<number>>([]);
 
-	Guy.renderHook = () => setRerender({});
+	Guy.setMemory = (memory: Array<number>) => setMemory(memory);
 
 	return (
 		<div className="container memory">
-			<div className="memory-inner"></div>
+			<div className="memory-inner">
+				{memory.map((v, i) => (
+					<div key={i} className="container inner memory-value">
+						{v}
+					</div>
+				))}
+			</div>
 		</div>
 	);
 };

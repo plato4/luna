@@ -1,19 +1,19 @@
 .instructions {
-    width: 250px;
-    margin: 1%;
+    width: calc(100 * var(--resolution));
+    margin: calc(5 * var(--resolution));
 }
 
 .textarea {
-    width: calc(100% - 48px);
-    height: calc(100% - 48px);
+    width: calc(50 * var(--resolution));
+    height: calc(100% - 9 * var(--resolution));
 
-    padding: 5%;
+    padding: calc(3 * var(--resolution));
 
     resize: none;
 
     font-family: 'PIXEL';
-    font-size: 42px;
-    text-shadow: 4px 4px black;
+    font-size: calc(10 * var(--resolution));
+    text-shadow: calc(1 * var(--resolution)) calc(1 * var(--resolution)) black;
     outline: none;
 
     color: var(--c24);

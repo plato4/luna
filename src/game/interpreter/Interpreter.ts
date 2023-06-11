@@ -219,6 +219,10 @@ export default class Interpreter {
 		return this.memory[loc];
 	};
 
+	public getAllMemory() {
+		return this.memory;
+	}
+
 	public setMemory = (loc: number, val: number): boolean => {
 		loc = Math.trunc(loc);
 		val = Math.trunc(val);
