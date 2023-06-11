@@ -1,30 +1,33 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import Component from "../Component";
 import { Game } from "../Game";
-import { Rotate } from "./Rotate";
 import * as BABYLON from "babylonjs";
 import "babylonjs-loaders";
+import { Guy } from "./Guy";
 
 export class GameManager extends Component {
 	public game: Game;
+	public guy?: Guy;
 	constructor(node: BABYLON.Node, game: Game) {
 		super("gamemanager", node);
 		this.game = game;
-		this.boxScene();
+		this.setupScene();
 	}
 
-	public onStart(): void {}
+	public onStart(): void {
+		this.guy = new Guy(this.node);
+	}
 	public onUpdate(): void {}
 	public onDestroy(): void {}
 
-	public boxScene() {
+	public setupScene() {
 		/*BABYLON.SceneLoader.Append(
 			"./",
 			"model.gltf",
 			this.node.getScene()
 		);*/
 
-		BABYLON.SceneLoader.ImportMesh(
+		/*BABYLON.SceneLoader.ImportMesh(
 			"",
 			"./",
 			"model.gltf",
@@ -32,7 +35,7 @@ export class GameManager extends Component {
 			(m) => {
 				new Rotate("Rotate", m[0]);
 			}
-		);
+		);*/
 
 		const camera = this.node.getScene().getCameraByName("default_camera");
 

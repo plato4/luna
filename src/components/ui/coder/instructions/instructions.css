@@ -12,11 +12,14 @@
 
     font-family: 'PIXEL';
     font-size: 42px;
-    text-shadow: 4px 4px var(--c1);
+    text-shadow: 4px 4px black;
     outline: none;
 
     color: var(--c24);
     background-color: var(--c1);
+    border: none
+}
 
-    border: inset 0 0 10px 10px black;
+.error {
+    border: 2px dotted red;
 }

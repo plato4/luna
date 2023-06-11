@@ -13,6 +13,7 @@ export class Game extends BABYLON.Engine {
 		super(canvas, true);
 		this.canvas = canvas;
 		this.scene = new BABYLON.Scene(this);
+		this.scene.clearColor = BABYLON.Color4.FromHexString("#966c6c");
 
 		new BABYLON.ArcRotateCamera(
 			"default_camera",

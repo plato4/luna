@@ -9,6 +9,6 @@ body {
 }
 
 .container {
-    border: 26px solid transparent;
-	border-image: url('panel1.png') 26 round;
+    border: 38px solid transparent;
+	border-image: url('panel2.png') 38 repeat;
 }
