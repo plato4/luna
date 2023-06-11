@@ -1,6 +1,6 @@
 .coder {
     height: 100%;
-    width: calc(200 * var(--resolution));
+    width: 100%;
 
     display: flex;
 }

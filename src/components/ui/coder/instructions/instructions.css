@@ -1,5 +1,5 @@
 .instructions {
-    width: calc(100 * var(--resolution));
+    width: calc(61 * var(--resolution));
     margin: calc(5 * var(--resolution));
 }
 
