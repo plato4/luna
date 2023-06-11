@@ -12,7 +12,7 @@
     resize: none;
 
     font-family: 'PIXEL';
-    font-size: calc(10 * var(--resolution));
+    font-size: var(--font-size);
     text-shadow: calc(1 * var(--resolution)) calc(1 * var(--resolution)) black;
     outline: none;
 

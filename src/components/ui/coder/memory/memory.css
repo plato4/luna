@@ -13,7 +13,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
 }
 
 .memory-value {
@@ -23,7 +23,7 @@
     background-color: var(--c1);
     color: var(--c24);
     
-    font-size: calc(15 * var(--resolution));
+    font-size: var(--font-size);
     
     display: flex;
     align-items: center;
