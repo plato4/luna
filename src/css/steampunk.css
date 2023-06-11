@@ -12,3 +12,8 @@ body {
     border: 38px solid transparent;
 	border-image: url('panel2.png') 38 repeat;
 }
+
+.container.inner {
+    border: 12px solid transparent;
+	border-image: url('panelinner.png') 12 repeat;
+}
