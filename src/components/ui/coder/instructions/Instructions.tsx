@@ -1,7 +1,7 @@
 import { LexerStatus, lex } from "../../../../game/interpreter/Lexer";
 import "./instructions.css";
 
-import React, { useState } from "react";
+import { useState } from "react";
 
 const Instructions = () => {
 	const [hasError, setHasError] = useState(false);

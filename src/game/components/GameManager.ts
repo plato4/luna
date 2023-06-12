@@ -40,7 +40,7 @@ export class GameManager extends Component {
 		const camera = this.node.getScene().getCameraByName("default_camera");
 
 		if (camera) camera.attachControl(this.game.canvas, true);
-		const light = new BABYLON.HemisphericLight(
+		new BABYLON.HemisphericLight(
 			"default_light",
 			new BABYLON.Vector3(1, 1, 0),
 			this.game.scene

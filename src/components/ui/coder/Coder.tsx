@@ -1,6 +1,5 @@
 import "./coder.css";
 
-import React from "react";
 import Instructions from "./instructions/Instructions";
 import Memory from "./memory/Memory";
 import Controls from "./controls/Controls";
