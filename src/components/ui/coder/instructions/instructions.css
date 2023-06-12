@@ -1,11 +1,12 @@
 .instructions {
     width: calc(80 * var(--resolution));
+    height: calc(150 * var(--resolution));
     margin: calc(5 * var(--resolution));
 }
 
 .textarea {
     width: calc(69 * var(--resolution));
-    height: calc(100% - 10 * var(--resolution));
+    height: calc(139 * var(--resolution));
 
     padding: calc(3 * var(--resolution));
 

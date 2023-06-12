@@ -1,0 +1,8 @@
+.controls {
+    height: calc(20 * var(--resolution));
+    width: calc(80 * var(--resolution));
+    margin: calc(5 * var(--resolution));
+
+    background-color: var(--c21);
+    border-radius: 50%;
+}
