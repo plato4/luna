@@ -3,7 +3,7 @@ import { createGame } from "../../game/Game";
 import { useGameContext } from "../app/App";
 
 const GameCanvas: React.FC = () => {
-	const { game, setGame } = useGameContext();
+	const { setGame } = useGameContext();
 	const canvas = useRef<HTMLCanvasElement>(null);
 	useEffect(() => {
 		if (!canvas.current) return;
@@ -12,7 +12,7 @@ const GameCanvas: React.FC = () => {
 		return (): void => {
 			_game.dispose();
 		};
-	}, []);
+	}, [setGame]);
 	return <canvas ref={canvas} style={{ width: "100%", height: "100%" }} />;
 };
 
