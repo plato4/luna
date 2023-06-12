@@ -10,7 +10,7 @@ const Instructions = () => {
 		<div className="container instructions">
 			<textarea
 				spellCheck="false"
-				className={`container inner textarea ${hasError ? "error" : ""}`}
+				className={`textbox textarea ${hasError ? "error" : ""}`}
 				onChange={(e) => {
 					const r = lex(e.target.value);
 					setHasError(r.lexerStatus !== LexerStatus.Success);
