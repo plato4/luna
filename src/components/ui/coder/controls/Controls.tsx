@@ -1,4 +1,3 @@
-import Button from "../../button/Button";
 import "./controls.css";
 
 const Controls = () => {
