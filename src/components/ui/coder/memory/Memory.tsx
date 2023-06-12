@@ -12,7 +12,7 @@ const Memory = () => {
 		<div className="container memory">
 			<div className="memory-inner">
 				{memory.map((v, i) => (
-					<div key={i} className="label memory-value">
+					<div key={i} className="textbox memory-value">
 						{v}
 					</div>
 				))}

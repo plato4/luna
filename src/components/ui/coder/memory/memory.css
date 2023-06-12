@@ -16,8 +16,8 @@
 }
 
 .memory-value {
-    width: calc(15 * var(--resolution));
-    height: calc(10 * var(--resolution));
+    width: calc(10 * var(--resolution));
+    height: calc(5 * var(--resolution));
 
     background-color: var(--c1);
     color: var(--c24);
