@@ -17,10 +17,20 @@ body {
 
 .container {
     border: calc(8 * var(--resolution)) solid transparent;
-	border-image: url('panel2.png') 38 round;
+	border-image: url('container.png') 38 round;
 }
 
-.container.inner {
+.label {
     border: calc(3 * var(--resolution)) solid transparent;
-	border-image: url('panelinner.png') 12 round;
+	border-image: url('label.png') 12 round;
+}
+
+.textbox {
+    border: calc(3 * var(--resolution)) solid transparent;
+	border-image: url('textbox.png') 12 round;
+}
+
+.button {
+    border: calc(3 * var(--resolution)) solid transparent;
+	border-image: url('button.png') 12 round;
 }

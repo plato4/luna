@@ -53,7 +53,7 @@ const App: React.FC = () => {
 					</GameContext.Provider>
 				</div>
 			) : (
-				<div className="ui-layer-container" onClick={() => setStarted(true)}>
+				<div className="prompt-container" onClick={() => setStarted(true)}>
 					<h1 style={{ margin: "auto" }}>CLICK TO START!</h1>
 				</div>
 			)}
