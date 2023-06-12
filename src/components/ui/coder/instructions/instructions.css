@@ -1,0 +1,27 @@
+.instructions {
+    width: calc(80 * var(--resolution));
+    height: calc(150 * var(--resolution));
+    margin: calc(5 * var(--resolution));
+}
+
+.textarea {
+    width: calc(69 * var(--resolution));
+    height: calc(139 * var(--resolution));
+
+    padding: calc(3 * var(--resolution));
+
+    resize: none;
+
+    font-family: 'PIXEL';
+    font-size: var(--font-size);
+    text-shadow: calc(1 * var(--resolution)) calc(1 * var(--resolution)) black;
+    outline: none;
+
+    color: var(--c24);
+    background-color: var(--c1);
+    border: none
+}
+
+.error {
+    color: var(--c12) !important;
+}

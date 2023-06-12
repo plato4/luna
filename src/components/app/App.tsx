@@ -1,5 +1,6 @@
 import "./app.css";
-import "../../css/bit.css";
+import "../../css/steampunk.css";
+import "../../css/palette.css";
 
 import { createContext, useContext, useState } from "react";
 import React from "react";
@@ -7,7 +8,7 @@ import React from "react";
 import GameCanvas from "../gamecanvas/GameCanvas";
 
 import { Game } from "../../game/Game";
-import Coder from "../coder/Coder";
+import Ui from "../ui/Ui";
 
 document.addEventListener("contextmenu", (event) => event.preventDefault());
 
@@ -45,7 +46,7 @@ const App: React.FC = () => {
 							<GameCanvas />
 						</div>
 						<div className="ui-layer-container">
-							<Coder />
+							<Ui />
 						</div>
 					</GameContext.Provider>
 				</div>

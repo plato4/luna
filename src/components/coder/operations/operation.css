@@ -1,7 +1,0 @@
-.operation {
-    height: calc(10 * var(--resolution));
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}

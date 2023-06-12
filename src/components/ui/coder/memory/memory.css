@@ -1,0 +1,30 @@
+.memory {
+    width: calc(100 * var(--resolution));
+    height: calc(200 * var(--resolution));
+    margin: calc(5 * var(--resolution));
+}
+
+.memory-inner {
+    height: 100%;
+    background-color: var(--c21);
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.memory-value {
+    width: calc(15 * var(--resolution));
+    height: calc(10 * var(--resolution));
+
+    background-color: var(--c1);
+    color: var(--c24);
+    
+    font-size: var(--font-size);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

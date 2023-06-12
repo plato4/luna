@@ -1,19 +1,18 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-
-import { Level } from "./Level";
+import * as BABYLON from "babylonjs";
 import Component from "../Component";
-import { Interpreter } from "./Interpreter";
+import Interpreter from "../interpreter/Interpreter";
 
 export class Guy extends Component {
-	constructor(level: Level, gameObject: Phaser.GameObjects.GameObject) {
-		super(gameObject, "guy");
+	public interpreter: Interpreter = new Interpreter(48);
+	public static setMemory?: (memory: Array<number>) => void;
+	constructor(node: BABYLON.Node) {
+		super("guy", node);
 	}
 
-	public onStart(): void {}
-	public onUpdate(): void {
-		const interpreter = (this.gameObject as any)["Interpreter"] as Interpreter;
-		if (interpreter) interpreter.step()
-
+	public onStart(): void {
+		if (Guy.setMemory) Guy.setMemory(this.interpreter.getAllMemory());
 	}
+	public onUpdate(): void {}
 	public onDestroy(): void {}
 }
