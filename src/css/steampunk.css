@@ -20,14 +20,9 @@ body {
 	border-image: url('container.png') 38 round;
 }
 
-.label {
-    border: calc(3 * var(--resolution)) solid transparent;
-	border-image: url('label.png') 12 round;
-}
-
 .textbox {
-    border: calc(3 * var(--resolution)) solid transparent;
-	border-image: url('textbox.png') 12 round;
+    border: calc(6 * var(--resolution)) solid transparent;
+	border-image: url('textbox.png') 24 round;
 }
 
 .button {
