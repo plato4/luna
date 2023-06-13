@@ -26,6 +26,11 @@ body {
 }
 
 .button {
-    border: calc(3 * var(--resolution)) solid transparent;
-	border-image: url('button.png') 12 round;
+    border: calc(6 * var(--resolution)) solid transparent;
+	border-image: url('button.png') 24 round;
+    background-color: #fbb954;
+}
+
+.button:active {
+    border-image-source: url('button2.png');
 }
