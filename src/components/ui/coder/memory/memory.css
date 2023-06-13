@@ -1,6 +1,6 @@
 .memory {
     width: calc(100 * var(--resolution));
-    height: calc(200 * var(--resolution));
+    height: calc(196 * var(--resolution));
     margin: calc(5 * var(--resolution));
 }
 
@@ -12,7 +12,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .memory-value {
