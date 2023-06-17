@@ -5,13 +5,13 @@ import Interpreter from "../interpreter/Interpreter";
 
 export class Guy extends Component {
 	public interpreter: Interpreter = new Interpreter(45);
-	public static setMemory?: (memory: Array<number>) => void;
+	public static setInterpreter?: (interpreter: Interpreter) => void;
 	constructor(node: BABYLON.Node) {
 		super("guy", node);
 	}
 
 	public onStart(): void {
-		if (Guy.setMemory) Guy.setMemory(this.interpreter.getAllMemory());
+		if (Guy.setInterpreter) Guy.setInterpreter(this.interpreter);
 	}
 	public onUpdate(): void {}
 	public onDestroy(): void {}

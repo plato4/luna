@@ -1,9 +1,15 @@
-import { LexerStatus, lex } from "../../../../game/interpreter/Lexer";
 import "./instructions.css";
 
-import { useState } from "react";
+import React, { useState } from "react";
 
-const Instructions = () => {
+import Interpreter from "../../../../game/interpreter/Interpreter";
+import { LexerStatus, lex } from "../../../../game/interpreter/Lexer";
+
+interface InstructionsProps {
+	interpreter: Interpreter;
+}
+
+const Instructions: React.FC<InstructionsProps> = ({ interpreter }) => {
 	const [hasError, setHasError] = useState(false);
 
 	return (

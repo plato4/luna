@@ -1,6 +1,14 @@
 import "./controls.css";
 
-const Controls = () => {
+import React from "react";
+
+import Interpreter from "../../../../game/interpreter/Interpreter";
+
+interface ControlsProps {
+	interpreter: Interpreter;
+}
+
+const Controls: React.FC<ControlsProps> = ({ interpreter }) => {
 	return (
 		<div className="container controls">
 			<div className="button">Play</div>
