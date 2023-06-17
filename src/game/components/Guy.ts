@@ -4,7 +4,7 @@ import Component from "../Component";
 import Interpreter from "../interpreter/Interpreter";
 
 export class Guy extends Component {
-	public interpreter: Interpreter = new Interpreter(44);
+	public interpreter: Interpreter = new Interpreter(45);
 	public static setMemory?: (memory: Array<number>) => void;
 	constructor(node: BABYLON.Node) {
 		super("guy", node);

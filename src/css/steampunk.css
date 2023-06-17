@@ -1,5 +1,5 @@
 :root{
-    --pixel-size: 0.0045;
+    --pixel-size: 0.0025;
     --font-size-scale: 12;
     --resolution: calc(min(100vw, 100vh) * var(--pixel-size));
     --font-size: calc(var(--resolution) * var(--font-size-scale));

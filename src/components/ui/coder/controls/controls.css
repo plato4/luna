@@ -1,10 +1,10 @@
 .controls {
     height: calc(20 * var(--resolution));
-    width: calc(80 * var(--resolution));
+    width: calc(120 * var(--resolution));
     margin: calc(5 * var(--resolution));
 
     background-color: var(--c21);
-    border-radius: 50%;
+    border-radius: 25%;
 
     display: flex;
     align-items: center;

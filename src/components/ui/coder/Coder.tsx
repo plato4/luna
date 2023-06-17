@@ -7,9 +7,9 @@ import Controls from "./controls/Controls";
 const Coder = () => {
 	return (
 		<div className="coder">
+			<Memory />
 			<Instructions />
 			<Controls />
-			<Memory />
 		</div>
 	);
 };
