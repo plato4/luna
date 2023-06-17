@@ -27,17 +27,8 @@ export const GameContext = createContext<GameContextType>({
 export const useGameContext = () => useContext(GameContext);
 
 const App: React.FC = () => {
-	const [windowTooSmall, setWindowTooSmall] = useState(false);
 	const [game, setGame] = useState<Game>();
 	const [started, setStarted] = useState(false);
-
-	const onResize = () =>
-		setWindowTooSmall(
-			document.documentElement.clientHeight <= 600 ||
-				document.documentElement.clientWidth <= 840
-		);
-
-	window.addEventListener("resize", onResize);
 
 	return (
 		<div>
@@ -56,11 +47,6 @@ const App: React.FC = () => {
 				<div className="prompt-container" onClick={() => setStarted(true)}>
 					<h1 style={{ margin: "auto" }}>CLICK TO START!</h1>
 				</div>
-			)}
-			{windowTooSmall ? (
-				<div className="window-too-small">The window is too small.</div>
-			) : (
-				<></>
 			)}
 		</div>
 	);
