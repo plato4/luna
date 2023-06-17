@@ -13,7 +13,7 @@ enum Comparison {
 	LT,
 }
 
-type Memory = Array<number>;
+type Memory = number[];
 type Instruction = number[];
 type Instructions = Instruction[];
 
@@ -30,7 +30,7 @@ export default class Interpreter {
 	private readonly PARAM2_VAL = 4;
 
 	constructor(memorySize = 5) {
-		this.memory = new Array<number>();
+		this.memory = [];
 		for (let i = 0; i < memorySize; i++) {
 			this.memory.push(0);
 		}
