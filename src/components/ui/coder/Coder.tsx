@@ -11,7 +11,6 @@ import Status from "./status/Status";
 const Coder = () => {
 	const [guy, setGuy] = useState<Guy>();
 	Guy.setGuy = setGuy;
-	const [, setRerender] = useState({});
 	const [status, setStatus] = useState("OK");
 
 	return guy ? (
@@ -19,11 +18,7 @@ const Coder = () => {
 			<Memory guy={guy} />
 			<Instructions guy={guy} />
 			<Status status={status} />
-			<Controls
-				guy={guy}
-				rerender={() => setRerender({})}
-				setStatus={setStatus}
-			/>
+			<Controls guy={guy} setStatus={setStatus} />
 		</div>
 	) : (
 		<div>No Interpeter</div>
