@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import * as BABYLON from "babylonjs";
 import Component from "../Component";
-import Interpreter from "../interpreter/Interpreter";
+import Interpreter, { Status } from "../interpreter/Interpreter";
 
 export class Guy extends Component {
 	public interpreter: Interpreter = new Interpreter(32);
@@ -13,9 +13,8 @@ export class Guy extends Component {
 	public onStart(): void {
 		if (Guy.setGuy) Guy.setGuy(this);
 	}
-	public step(callback: () => void): void {
-		this.interpreter.step();
-		callback();
+	public step(): Status {
+		return this.interpreter.step();
 	}
 	public onUpdate(): void {}
 	public onDestroy(): void {}

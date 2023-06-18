@@ -1,0 +1,14 @@
+.status {
+    width: calc(120 * var(--resolution));
+
+    margin-left: calc(5 * var(--resolution));
+    margin-top: calc(5 * var(--resolution));
+
+    background-color: var(--c21);
+    border-radius: 25%;
+}
+
+.status-text {
+    color: var(--c24);
+    background-color: var(--c1);
+}
