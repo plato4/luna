@@ -1,17 +1,18 @@
-import { Guy } from "../../../../game/components/Guy";
 import "./memory.css";
 
-import { useState } from "react";
+import React from "react";
 
-const Memory = () => {
-	const [memory, setMemory] = useState<Array<number>>([]);
+import { Guy } from "../../../../game/components/Guy";
 
-	Guy.setMemory = (memory: Array<number>) => setMemory(memory);
+interface MemoryProps {
+	guy: Guy;
+}
 
+const Memory: React.FC<MemoryProps> = ({ guy }) => {
 	return (
 		<div className="container memory">
 			<div className="memory-inner">
-				{memory.map((v, i) => (
+				{guy.interpreter.getAllMemory().map((v, i) => (
 					<div key={i} className="textbox memory-value">
 						{v}
 					</div>
