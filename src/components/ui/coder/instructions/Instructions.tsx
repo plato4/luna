@@ -2,14 +2,14 @@ import "./instructions.css";
 
 import React, { useState } from "react";
 
-import Interpreter from "../../../../game/interpreter/Interpreter";
 import { LexerStatus, lex } from "../../../../game/interpreter/Lexer";
+import { Guy } from "../../../../game/components/Guy";
 
 interface InstructionsProps {
-	interpreter: Interpreter;
+	guy: Guy;
 }
 
-const Instructions: React.FC<InstructionsProps> = ({ interpreter }) => {
+const Instructions: React.FC<InstructionsProps> = ({ guy }) => {
 	const [hasError, setHasError] = useState(false);
 
 	return (
@@ -19,7 +19,12 @@ const Instructions: React.FC<InstructionsProps> = ({ interpreter }) => {
 				className={`textbox textarea ${hasError ? "error" : ""}`}
 				onChange={(e) => {
 					const r = lex(e.target.value);
-					setHasError(r.lexerStatus !== LexerStatus.Success);
+
+					if (r.lexerStatus !== LexerStatus.Success) setHasError(true);
+					else {
+						guy.interpreter.setInstructions(r.instructions);
+						setHasError(false);
+					}
 				}}
 			></textarea>
 		</div>

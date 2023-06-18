@@ -1,6 +1,6 @@
 .memory {
     width: calc(120 * var(--resolution));
-    height: calc(196 * var(--resolution));
+    height: calc(140 * var(--resolution));
     margin: calc(5 * var(--resolution));
 }
 
@@ -16,7 +16,7 @@
 }
 
 .memory-value {
-    width: calc(10 * var(--resolution));
+    width: calc(18 * var(--resolution));
     height: calc(5 * var(--resolution));
 
     background-color: var(--c1);

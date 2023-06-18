@@ -2,17 +2,17 @@ import "./memory.css";
 
 import React from "react";
 
-import Interpreter from "../../../../game/interpreter/Interpreter";
+import { Guy } from "../../../../game/components/Guy";
 
 interface MemoryProps {
-	interpreter: Interpreter;
+	guy: Guy;
 }
 
-const Memory: React.FC<MemoryProps> = ({ interpreter }) => {
+const Memory: React.FC<MemoryProps> = ({ guy }) => {
 	return (
 		<div className="container memory">
 			<div className="memory-inner">
-				{interpreter.getAllMemory().map((v, i) => (
+				{guy.interpreter.getAllMemory().map((v, i) => (
 					<div key={i} className="textbox memory-value">
 						{v}
 					</div>

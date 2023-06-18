@@ -5,19 +5,18 @@ import { useState } from "react";
 import Instructions from "./instructions/Instructions";
 import Memory from "./memory/Memory";
 import Controls from "./controls/Controls";
-import Interpreter from "../../../game/interpreter/Interpreter";
 import { Guy } from "../../../game/components/Guy";
 
 const Coder = () => {
-	const [interpreter, setInterpreter] = useState<Interpreter>();
+	const [guy, setGuy] = useState<Guy>();
+	Guy.setGuy = setGuy;
+	const [, setRerender] = useState({});
 
-	Guy.setInterpreter = setInterpreter;
-
-	return interpreter ? (
+	return guy ? (
 		<div className="coder">
-			<Memory interpreter={interpreter} />
-			<Instructions interpreter={interpreter} />
-			<Controls interpreter={interpreter} />
+			<Memory guy={guy} />
+			<Instructions guy={guy} />
+			<Controls guy={guy} rerender={() => setRerender({})} />
 		</div>
 	) : (
 		<div>No Interpeter</div>

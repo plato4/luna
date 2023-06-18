@@ -4,14 +4,18 @@ import Component from "../Component";
 import Interpreter from "../interpreter/Interpreter";
 
 export class Guy extends Component {
-	public interpreter: Interpreter = new Interpreter(45);
-	public static setInterpreter?: (interpreter: Interpreter) => void;
+	public interpreter: Interpreter = new Interpreter(32);
+	public static setGuy?: (guy: Guy) => void;
 	constructor(node: BABYLON.Node) {
 		super("guy", node);
 	}
 
 	public onStart(): void {
-		if (Guy.setInterpreter) Guy.setInterpreter(this.interpreter);
+		if (Guy.setGuy) Guy.setGuy(this);
+	}
+	public step(callback: () => void): void {
+		this.interpreter.step();
+		callback();
 	}
 	public onUpdate(): void {}
 	public onDestroy(): void {}

@@ -2,16 +2,25 @@ import "./controls.css";
 
 import React from "react";
 
-import Interpreter from "../../../../game/interpreter/Interpreter";
+import { Guy } from "../../../../game/components/Guy";
 
 interface ControlsProps {
-	interpreter: Interpreter;
+	guy: Guy;
+	rerender: () => void;
 }
 
-const Controls: React.FC<ControlsProps> = ({ interpreter }) => {
+const Controls: React.FC<ControlsProps> = ({ guy, rerender }) => {
 	return (
 		<div className="container controls">
-			<div className="button">Play</div>
+			<div
+				className="button"
+				onClick={() => {
+					guy.interpreter.step();
+					rerender();
+				}}
+			>
+				Play
+			</div>
 			<div className="button">Pause</div>
 			<div className="button">Reset</div>
 		</div>
