@@ -16,7 +16,7 @@ const generate_ground = (
 				modelName: model.modelName,
 				folderPath: model.folderPath,
 				fileName: model.fileName,
-				position: new BABYLON.Vector3(x, 0, y),
+				position: new BABYLON.Vector3(width / 2 - x, 0, height / 2 - y),
 				rotation: model.rotation,
 				scale: model.scale,
 			});
@@ -39,6 +39,14 @@ export const DEV_LEVEL: ILevel = {
 			10,
 			10
 		),
+		{
+			modelName: "",
+			folderPath: "./",
+			fileName: "guy.gltf",
+			position: new BABYLON.Vector3(0, 1, 0),
+			rotation: new BABYLON.Vector3(0, 0, 0),
+			scale: new BABYLON.Vector3(1, 1, 1),
+		},
 	],
 	clearColor: "#966c6c",
 	gameManager: { name: "GameManager", component: GameManager },
