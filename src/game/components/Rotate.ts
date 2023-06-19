@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import { TransformNode, Vector3 } from "babylonjs";
-import Component from "../Component";
+import Component from "../../engine/Component";
 
 export class Rotate extends Component {
 	public onStart(): void {}
