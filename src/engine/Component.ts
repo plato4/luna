@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import * as BABYLON from "babylonjs";
+import "babylonjs-loaders";
 
-export default abstract class Component {
+export default class Component {
 	public readonly node: BABYLON.Node;
 	private readonly name: string;
 
@@ -20,22 +22,23 @@ export default abstract class Component {
 			scene.onBeforeRenderObservable.remove(updateObservable);
 			scene.onBeforeRenderObservable.remove(startObservable);
 			this.tryCall(this.onDestroy);
+			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 			delete (this.node as any)[this.name];
 		});
 	}
-	public abstract onStart(): void;
+	public onStart(): void {}
 
 	private tryOnStart(): void {
 		this.tryCall(this.onStart);
 	}
 
-	public abstract onUpdate(): void;
+	public onUpdate(): void {}
 
 	private tryOnUpdate(): void {
 		this.tryCall(this.onUpdate);
 	}
 
-	public abstract onDestroy(): void;
+	public onDestroy(): void {}
 
 	public destroy(): void {
 		this.node.dispose();
