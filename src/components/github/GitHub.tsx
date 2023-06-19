@@ -2,7 +2,7 @@ import "./github.css";
 
 const GitHub = () => {
 	return (
-		<span id="forkongithub">
+		<span id="github">
 			<a href="https://github.com/plato4/luna">GitHub</a>
 		</span>
 	);

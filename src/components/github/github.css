@@ -1,4 +1,4 @@
-#forkongithub a
+#github a
 {
   background: #000;
   color: #fff;
@@ -13,13 +13,13 @@
   transition: 0.5s;
 }
 
-#forkongithub a:hover
+#github a:hover
 {
   background: #c11;
   color: #fff;
 }
 
-#forkongithub a::before,#forkongithub a::after
+#github a::before,#github a::after
 {
   content: "";
   width: 100%;
@@ -31,7 +31,7 @@
   background: #fff;
 }
 
-#forkongithub a::after
+#github a::after
 {
   bottom: 1px;
   top: auto;
@@ -39,7 +39,7 @@
 
 @media screen and (min-width:800px)
 {
-  #forkongithub
+  #github
   {
     position: fixed;
     display: block;
@@ -51,7 +51,7 @@
     z-index: 9999;
   }
 
-  #forkongithub a
+  #github a
   {
     width: 200px;
     position: absolute;
