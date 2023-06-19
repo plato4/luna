@@ -1,7 +1,5 @@
 import "./github.css";
 
-import React from "react";
-
 const GitHub = () => {
 	return (
 		<span id="forkongithub">
