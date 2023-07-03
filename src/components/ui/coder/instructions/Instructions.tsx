@@ -2,7 +2,7 @@ import "./instructions.css";
 
 import React, { useState } from "react";
 
-import { LexerStatus, lex } from "../../../../game/interpreter/Lexer";
+import { LexerStatus, lex } from "../../../../interpreter/Lexer";
 import { Guy } from "../../../../game/components/Guy";
 
 interface InstructionsProps {

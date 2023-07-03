@@ -30,7 +30,6 @@ export const useGameContext = () => useContext(GameContext);
 const App: React.FC = () => {
 	const [game, setGame] = useState<Game>();
 	const [started, setStarted] = useState(false);
-	console.log(window.location.hostname);
 	return (
 		<div>
 			{window.location.hostname.includes("azurestaticapps.net") ? (

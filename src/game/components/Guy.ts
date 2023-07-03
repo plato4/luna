@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import Component from "../../engine/Component";
-import Interpreter, { Status } from "../interpreter/Interpreter";
+import Interpreter, { Status } from "../../interpreter/Interpreter";
 
 export class Guy extends Component {
 	public interpreter: Interpreter = new Interpreter(32);

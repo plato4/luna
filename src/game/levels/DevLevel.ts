@@ -52,7 +52,4 @@ export const DEV_LEVEL: ILevel = {
 		position: new BABYLON.Vector3(0, 25, -20),
 		rotation: new BABYLON.Vector3(0.9, 0, 0),
 	},
-	postBuild: (scene: BABYLON.Scene) => {
-		console.log("dev level built", scene);
-	},
 };
