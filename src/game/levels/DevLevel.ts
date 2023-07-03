@@ -1,14 +1,13 @@
 import * as BABYLON from "babylonjs";
 
-import { GameScene, IGameSceneModel, ILevel } from "../../engine/GameScene";
-import { GameManager } from "../components/GameManager";
+import { IModel, ILevel } from "../../engine/Level";
 
 const generate_ground = (
-	model: IGameSceneModel,
+	model: IModel,
 	width: number,
 	height: number
-): IGameSceneModel[] => {
-	const models: IGameSceneModel[] = [];
+): IModel[] => {
+	const models: IModel[] = [];
 
 	for (let x = 0; x < width; x++)
 		for (let y = 0; y < height; y++) {
@@ -49,12 +48,11 @@ export const DEV_LEVEL: ILevel = {
 		},
 	],
 	clearColor: "#966c6c",
-	gameManager: { name: "GameManager", component: GameManager },
 	camera: {
 		position: new BABYLON.Vector3(0, 25, -20),
 		rotation: new BABYLON.Vector3(0.9, 0, 0),
 	},
-	postBuild: (gameScene: GameScene) => {
-		console.log("dev level built", gameScene);
+	postBuild: (scene: BABYLON.Scene) => {
+		console.log("dev level built", scene);
 	},
 };

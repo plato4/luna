@@ -1,18 +1,36 @@
 import * as BABYLON from "babylonjs";
-import { GameScene, ILevel } from "./GameScene";
+import { GameManager } from "./GameManager";
 
 export class Game extends BABYLON.Engine {
-	public scene: GameScene;
+	public scene: BABYLON.Scene;
 	public canvas: HTMLCanvasElement;
 
-	constructor(canvas: HTMLCanvasElement, level: ILevel) {
+	constructor(
+		canvas: HTMLCanvasElement,
+		gameManagerComponent: typeof GameManager
+	) {
 		super(canvas, true);
 
 		console.log("Creating game");
 
 		this.canvas = canvas;
-		this.scene = new GameScene(this, {});
-		this.scene.load(level);
+		this.scene = new BABYLON.Scene(this);
+
+		new BABYLON.FreeCamera(
+			"default_camera",
+			BABYLON.Vector3.Zero(),
+			this.scene,
+			true
+		);
+
+		new BABYLON.HemisphericLight(
+			"default_light",
+			new BABYLON.Vector3(1, 1, 0),
+			this.scene
+		);
+
+		const gameManager = new BABYLON.Node("default_gamemanager", this.scene);
+		new gameManagerComponent(this, gameManager);
 
 		window.addEventListener("resize", () => this.resize());
 		this.onDisposeObservable.add(() => {

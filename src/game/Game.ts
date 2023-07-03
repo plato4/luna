@@ -1,6 +1,6 @@
 import { Game } from "../engine/Game";
-import { DEV_LEVEL } from "./levels/DevLevel";
+import { GameManager } from "./components/GameManager";
 
 export const createGame = (canvas: HTMLCanvasElement): Game => {
-	return new Game(canvas, DEV_LEVEL);
+	return new Game(canvas, GameManager);
 };

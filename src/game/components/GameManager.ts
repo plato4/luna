@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import Component from "../../engine/Component";
-
 import { Guy } from "./Guy";
-import { Game } from "../../engine/Game";
+import { GameManager as BaseGameManager } from "../../engine/GameManager";
+import { loadLevel } from "../../engine/Level";
+import { DEV_LEVEL } from "../levels/DevLevel";
 
-export class GameManager extends Component {
-	public game?: Game;
+export class GameManager extends BaseGameManager {
 	public guy?: Guy;
 
 	public onStart(): void {
+		loadLevel(this.game.scene, DEV_LEVEL);
 		this.guy = new Guy("Guy", this.node);
 	}
 	public onUpdate(): void {}
