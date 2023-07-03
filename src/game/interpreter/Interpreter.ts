@@ -38,7 +38,7 @@ export default class Interpreter {
 
 	public step = (): Status => {
 		if (!this.instructions) return Status.SUCCESS;
-		if (this.memory[this.P_REGISTER] === undefined) return Status.ERROR;
+		if (this.memory[this.P_REGISTER] === null) return Status.ERROR;
 		if (this.memory[this.P_REGISTER] >= this.instructions.length)
 			return Status.POINTER_OUT_OF_CODE;
 
@@ -120,9 +120,9 @@ export default class Interpreter {
 		const v2t = instruction[this.PARAM2_TYPE];
 
 		const resolved_value1 = this.ResolveValue(v1t, v1);
-		if (resolved_value1 === undefined) return false;
+		if (resolved_value1 === null) return false;
 		const resolved_value2 = this.ResolveValue(v2t, v2);
-		if (resolved_value2 === undefined) return false;
+		if (resolved_value2 === null) return false;
 
 		if (resolved_value1 > resolved_value2) this.comparison = Comparison.GT;
 		if (resolved_value1 < resolved_value2) this.comparison = Comparison.LT;
@@ -141,11 +141,11 @@ export default class Interpreter {
 		const v2t = instruction[this.PARAM2_TYPE];
 
 		const revolved_loc1 = this.ResolveMemoryLoc(v1t, v1);
-		if (revolved_loc1 === undefined) return false;
+		if (revolved_loc1 === null) return false;
 		const resolved_value1 = this.ResolveValue(v1t, v1);
-		if (resolved_value1 === undefined) return false;
+		if (resolved_value1 === null) return false;
 		const resolved_value2 = this.ResolveValue(v2t, v2);
-		if (resolved_value2 === undefined) return false;
+		if (resolved_value2 === null) return false;
 
 		switch (instruction[this.OPER]) {
 			case OperatorType.SET:
@@ -165,10 +165,10 @@ export default class Interpreter {
 	private ResolveMemoryLoc = (
 		value_type: number,
 		loc: number
-	): number | undefined => {
+	): number | null => {
 		switch (value_type) {
 			case ParamType.CONST:
-				return undefined;
+				return null;
 
 			case ParamType.MEMORY:
 				loc = Math.trunc(loc);
@@ -177,45 +177,42 @@ export default class Interpreter {
 			case ParamType.INDIRECT:
 				// eslint-disable-next-line no-case-declarations
 				const r = this.getMemory(loc);
-				if (r === undefined) return undefined;
+				if (r === null) return null;
 				loc = Math.trunc(loc);
 				return r;
 
 			default:
-				return undefined;
+				return null;
 		}
 	};
 
-	private ResolveValue = (
-		value_type: number,
-		value: number
-	): number | undefined => {
-		let r: number | undefined = value;
+	private ResolveValue = (value_type: number, value: number): number | null => {
+		let r: number | null = value;
 		switch (value_type) {
 			case ParamType.CONST:
 				return r;
 
 			case ParamType.MEMORY:
 				r = this.getMemory(value);
-				if (r === undefined) return undefined;
+				if (r === null) return null;
 				return r;
 
 			case ParamType.INDIRECT:
 				r = this.getMemory(value);
-				if (r === undefined) return undefined;
+				if (r === null) return null;
 				r = this.getMemory(r);
-				if (r === undefined) return undefined;
+				if (r === null) return null;
 				return r;
 
 			default:
-				return undefined;
+				return null;
 		}
 	};
 
-	public getMemory = (loc: number): number | undefined => {
+	public getMemory = (loc: number): number | null => {
 		loc = Math.trunc(loc);
-		if (loc < 0) return undefined;
-		if (loc >= this.memory.length) return undefined;
+		if (loc < 0) return null;
+		if (loc >= this.memory.length) return null;
 		return this.memory[loc];
 	};
 
