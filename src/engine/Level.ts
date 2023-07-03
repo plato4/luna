@@ -15,6 +15,7 @@ export interface INamedComponent {
 }
 
 export interface IModel {
+	name: string;
 	modelName?: string;
 	folderPath: string;
 	fileName: string;
@@ -41,6 +42,7 @@ export const loadLevel = (scene: BABYLON.Scene, level: ILevel) => {
 			m.fileName,
 			this,
 			(mesh) => {
+				mesh[0].name = m.name;
 				mesh[0].position = m.position ?? BABYLON.Vector3.One();
 				mesh[0].rotation = m.rotation ?? BABYLON.Vector3.One();
 				mesh[0].scaling = m.scale ?? BABYLON.Vector3.One();
@@ -76,6 +78,6 @@ export const loadLevel = (scene: BABYLON.Scene, level: ILevel) => {
 		try {
 			level.postBuild(scene);
 		} catch (ex) {
-			console.log("Level postbuild error: " + ex);
+			console.log("LEVEL POST BUILD ERROR: " + ex);
 		}
 };

@@ -11,7 +11,7 @@ export class Game extends BABYLON.Engine {
 	) {
 		super(canvas, true);
 
-		console.log("Creating game");
+		console.log("CREATING GAME");
 
 		this.canvas = canvas;
 		this.scene = new BABYLON.Scene(this);
@@ -34,7 +34,7 @@ export class Game extends BABYLON.Engine {
 
 		window.addEventListener("resize", () => this.resize());
 		this.onDisposeObservable.add(() => {
-			console.log("Disposing game");
+			console.log("DISPOSING GAME");
 		});
 
 		this.runRenderLoop(() => this.scene.render());

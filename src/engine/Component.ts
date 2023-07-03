@@ -50,7 +50,7 @@ export default class Component {
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		} catch (e: any) {
 			console.log(
-				"(" + this.node.name + ":" + this.name + ") Error: " + e.stack
+				"(" + this.node.name + ":" + this.name + ") ERROR: " + e.stack
 			);
 		}
 	}
