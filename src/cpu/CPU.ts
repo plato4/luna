@@ -1,5 +1,6 @@
 import { InstructionSet, Instructions, ParseResult } from "./Instruction";
 import { Memory } from "./Memory";
+import { LBL } from "./sets/Basic";
 
 export interface ActionResult {
 	success: boolean;
@@ -23,15 +24,11 @@ export class CPU {
 		this.memory.setAt(0, value);
 	}
 
-	private code: string;
-
 	public instructions: Instructions = [];
 
-	constructor(memory: Memory, instructionSet: InstructionSet, code: string) {
+	constructor(memory: Memory, instructionSet: InstructionSet) {
 		this._memory = memory;
 		this.instructionSet = instructionSet;
-		this.code = code;
-		this.parse();
 	}
 
 	public step(): ActionResult {
@@ -43,9 +40,9 @@ export class CPU {
 		};
 	}
 
-	private parse(): ParseResult {
+	public parse(code: string): ParseResult {
 		this.instructions = [];
-		const split = this.code.split("\n");
+		const split = code.split("\n");
 
 		for (const line in split) {
 			const definition = this.instructionSet.find((v) => v.check(line));
@@ -57,7 +54,10 @@ export class CPU {
 				};
 
 			const instruction = definition.parse(line);
-			if (!instruction.success) return instruction;
+			if (!instruction.success) {
+				instruction.line = split.findIndex((v) => v === line);
+				return instruction;
+			}
 			if (instruction.instruction)
 				this.instructions.push(instruction.instruction);
 		}
@@ -65,3 +65,8 @@ export class CPU {
 		return { success: true, description: "COMPILED SUCCESSFULLY" };
 	}
 }
+
+export const CPUTest = () => {
+	const cpu = new CPU(new Memory(32), [LBL]);
+	console.log(cpu.parse("LBL"));
+};
