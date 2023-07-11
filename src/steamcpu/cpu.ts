@@ -6,34 +6,40 @@ export interface Memory {
 	setAtIndirect(index: number, value: number): boolean;
 }
 
-export enum ReturnCode {
-	OK,
-	ERROR,
-	EOP,
-}
-
-export enum ParseCode {
-	OK,
-	ERROR,
-}
-
 export interface ActionResult {
-	code: ReturnCode;
+	success: boolean;
 	description: string;
 	line: number;
 }
 
 export interface ParseResult {
-	code: ParseCode;
+	success: boolean;
 	description: string;
+	instruction?: Instruction;
 }
+
+export type ParameterMapping = ParameterType[];
 
 export interface InstructionDefinition {
 	label: string;
 	name: string;
 	description: string;
+	parameterMapping: ParameterMapping;
 	action: (cpu: CPU) => ActionResult;
+	is: (line: string) => boolean;
 	parse: (line: string) => ParseResult;
+}
+
+export enum ParameterType {
+	CONSTANT,
+	LOCATION,
+	BOTH,
+}
+
+export interface Parameter {
+	value: number;
+	type: ParameterType;
+	indirect: boolean;
 }
 
 export interface Instruction {
@@ -44,13 +50,51 @@ export type InstructionSet = InstructionDefinition[];
 export type Instructions = Instruction[];
 
 export class CPU {
+	private _memory: Memory;
+	public get memory() {
+		return this._memory;
+	}
+
 	private instructionSet: InstructionSet;
-	private memory: Memory;
+
+	private _pointer = 0;
+
+	public get pointer() {
+		return this._pointer;
+	}
+
+	private code: string;
 
 	public instructions: Instructions = [];
 
-	constructor(memory: Memory, instructionSet: InstructionSet) {
-		this.memory = memory;
+	constructor(memory: Memory, instructionSet: InstructionSet, code: string) {
+		this._memory = memory;
 		this.instructionSet = instructionSet;
+		this.code = code;
+	}
+
+	public step(): ActionResult {
+		this._pointer++;
+		return {
+			success: true,
+			description: "",
+			line: this.pointer,
+		};
 	}
 }
+
+export const LBL: InstructionDefinition = {
+	label: "LBL",
+	name: "Label",
+	description: "A point for a jump statement to reference",
+	parameterMapping: [ParameterType.LOCATION],
+	action: function (cpu: CPU): ActionResult {
+		return { success: false, description: "temporary", line: cpu.pointer };
+	},
+	is: function (line: string): boolean {
+		return new RegExp("^" + this.label, "i").test(line);
+	},
+	parse: function (line: string): ParseResult {
+		return { success: true, description: "", instruction: { definition: LBL } };
+	},
+};
