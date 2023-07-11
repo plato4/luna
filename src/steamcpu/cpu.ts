@@ -71,6 +71,7 @@ export class CPU {
 		this._memory = memory;
 		this.instructionSet = instructionSet;
 		this.code = code;
+		this.parse();
 	}
 
 	public step(): ActionResult {
@@ -80,6 +81,10 @@ export class CPU {
 			description: "",
 			line: this.pointer,
 		};
+	}
+
+	private parse(): ParseResult {
+		let split = this.code.split("\n");
 	}
 }
 
