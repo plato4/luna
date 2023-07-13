@@ -1,4 +1,5 @@
-import { InstructionSet, Instructions, ParseResult } from "./Instruction";
+import { Instruction } from "./Instruction";
+import { InstructionDefinition } from "./InstructionDefinition";
 import { Memory } from "./Memory";
 import { LBL } from "./sets/Basic";
 
@@ -7,6 +8,16 @@ export interface ActionResult {
 	description: string;
 	line: number;
 }
+
+export interface ParseResult {
+	success: boolean;
+	description: string;
+	line?: number;
+	instruction?: Instruction;
+}
+
+export type InstructionSet = InstructionDefinition[];
+export type Instructions = Instruction[];
 
 export class CPU {
 	private _memory: Memory;

@@ -1,9 +1,6 @@
 import { CPU, ActionResult } from "../CPU";
-import {
-	InstructionDefinition,
-	ParameterType,
-	ParseResult,
-} from "../Instruction";
+import { ParameterType, ParseResult } from "../Instruction";
+import { InstructionDefinition } from "../InstructionDefinition";
 
 export const LBL: InstructionDefinition = {
 	label: "LBL",
